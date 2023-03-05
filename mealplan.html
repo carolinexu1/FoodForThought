@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Meal Plan</title>
+  <link rel="icon" href="FFTLogo.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 50px
+
+    }
+
+    p {
+      font-size: 25px;
+      text-align: center;
+      font-family: Palatino;
+      color: #387a5b;
+    }
+
+    .submission {
+      text-align: center;
+    }
+
+    .nutrient {
+      margin: auto;
+
+    }
+
+    #table_id {
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+
+  <!--nav bar-->
+  <nav class='navbar'>
+    Food For Thought
+    <ul class=nav-links>
+      <li><a href='index.html'>Home</a></li>
+      <li><a href='about.html'>About</a></li>
+      <li><a href='mealplan.html'>Meal Plan</a></li>
+      <li><a href='advice.html'>Advice</a></li>
+    </ul>
+  </nav>
+  <!--title-->
+  <div class='title'> Meal Plan Advice </div>
+  <p>What food would you like to search up?</p>
+  <div class='submission'>
+    <input type="text" id="food_input" name="Name"> <br> <br>
+    <button id="submit_button" class="button-60">Submit</button>
+  </div>
+
+  <div class="nutrient">
+    <p><span id="food_name"></span></p>
+  </div>
+
+  <p id="fdc_id_name"></p>
+  <p id="description"></p>
+  <p id="ingredient_list"></p>
+
+  <div class="table_class">
+    <table id="table_id">
+      <tr>
+        <th><strong>Nutrient Name</strong></th>
+        <th><strong>Percent of Daily Value</strong></th>
+        <th><strong>Nutrient Value</strong></th>
+      </tr>
+
+    </table>
+  </div>
+
+  <div>
+    <p>For more information on your food and FDC IDs, visit the USDA's <a href="https://fdc.nal.usda.gov">website</a> on
+      corresponding FDC IDs!</p>
+  </div>
+
+
+
+  <!--https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=McDonalds%20french%20fries-->
+
+
+  <script src="mealplan.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+
+</body>
+
+
+
+</html>
