@@ -5,14 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Meal Plan</title>
-  <link rel="icon" href="FFTLogo.png">
+
   <link href="style.css" rel="stylesheet" type="text/css" />
 
   <style>
     body {
       margin: 0;
       padding: 0;
-      padding-bottom: 50px
     }
 
     p {
@@ -35,6 +34,7 @@
       width: 70%;
       margin-left: 15%;
       margin-right: 15%;
+
     }
   </style>
 </head>
@@ -44,10 +44,7 @@
 
   <!--nav bar-->
   <nav class='navbar'>
-    <div class="container-fluid">
-      <a class="navbar-brand">
-        <img src="FFTLogo.png" alt="img" style="max-width: 36px; max-height: 36px;"></img> Food For Thought</a>
-    </div>
+    Food For Thought
     <ul class=nav-links>
       <li><a href='index.html'>Home</a></li>
       <li><a href='about.html'>About</a></li>
@@ -67,9 +64,6 @@
     <p><span id="food_name"></span></p>
   </div>
 
-  <p id="fdc_id_name"></p>
-  <p id="description"></p>
-  <p id="ingredient_list"></p>
 
   <div class="table_class">
     <table id="table_id">
@@ -82,9 +76,8 @@
     </table>
   </div>
 
-  <div>
-    <p>For more information on your food and FDC IDs, visit the USDA's <a href="https://fdc.nal.usda.gov">website</a> on
-      corresponding FDC IDs!</p>
+  <div class="image">
+
   </div>
 
 
@@ -92,7 +85,7 @@
   <!--https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=McDonalds%20french%20fries-->
 
 
-  <script src="mealplan.js"></script>
+  <script src="mealplantest.js"></script>
 
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover

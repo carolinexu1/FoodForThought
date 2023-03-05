@@ -15,6 +15,7 @@
     body {
       margin: 0;
       padding: 0;
+      padding-bottom: 100px
     }
 
     #map {
@@ -22,18 +23,35 @@
       top: 350px;
       left: 75px;
       right: 75px;
-
-
       bottom: -105px;
-      margin: 0 0px 0 0;
+      /*margin: 0 0 0 0;*/
       width: 90%;
       border: 2px solid black;
       display: block;
     }
 
+    .distance-container {
+      position: absolute;
+      width: 25%;
+      margin-left: 37%;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .distance-container>* {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 11px;
+      line-height: 18px;
+      display: block;
+      margin: 0;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
     table {
       position: absolute;
-      bottom: -255px;
+      bottom: -330px;
       width: 70%;
       margin-left: 15%;
       margin-right: 15%;
@@ -47,6 +65,7 @@
       color: #387a5b;
     }
 
+
     .submission {
       text-align: center;
     }
@@ -57,7 +76,10 @@
   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
   <!--nav bar-->
   <nav class='navbar'>
-    Food For Thought <img src="FFTLogo.png" style="float:left;width:75px;height:75px;">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="FFTLogo.png" alt="img" style="max-width: 36px; max-height: 36px;"></img> Food For Thought</a>
+    </div>
     <ul class=nav-links>
       <li><a href='index.html'>Home</a></li>
       <li><a href='about.html'>About</a></li>
@@ -69,24 +91,26 @@
   <!--title-->
   <div class='title'>Find your Local Hospital</div>
 
-  <p>Enter coordinates in *latitude, longitude*</p>
-  <div class='submission'>
-    <input type="text" id="food_input" name="Name"> <br> <br>
-    <button id="submit_button" class="button-60">Submit</button>
+  <p>Please format coordinates *long, lat*</p>
+  <p>Click Two Points to Find Distance!</p>
+  <div id='map'>
+    <script <link src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js">
+    </script>
+    <link rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css">
+
   </div>
 
-  <div id='map'></div>
+  <div id="distance" class="distance-container"></div>
 
-  <script
-    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-  <link rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-  
-  <div id="map"></div>
-
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
   <div id='table'>
     <table>
+      <th colspan="4">
+        <p>Major Children's Hospitals</p>
+      </th>
       <tr>
         <th><strong>Number</strong></th>
         <th><strong>Latitude</strong></th>
@@ -104,28 +128,30 @@
       <tr>
         <td>2</td>
         <td>41</td>
-        <td>-74</td>        
-        <td><a href="https://www.nyp.org/morganstanley?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4MTIwMzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D">New York City</a></td>
+        <td>-74</td>
+        <td><a
+            href="https://www.nyp.org/morganstanley?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4MTIwMzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D">New
+            York City</a></td>
       </tr>
 
-       <tr>
+      <tr>
         <td>3</td>
         <td>34</td>
-        <td>-118</td>        
+        <td>-118</td>
         <td><a href="https://www.chla.org/">Los Angeles</a></td>
       </tr>
 
       <tr>
         <td>4</td>
         <td>42</td>
-        <td>-89</td>        
+        <td>-89</td>
         <td><a href="https://www.luriechildrens.org/">Chicago</a></td>
       </tr>
 
       <tr>
         <td>5</td>
         <td>33</td>
-        <td>-97</td>        
+        <td>-97</td>
         <td><a href="https://www.childrens.com/locations/dallas-campus/childrens-medical-center-dallas">Dallas</a></td>
       </tr>
 
@@ -135,8 +161,6 @@
   <script type="module" src="/src/index.tsx"></script>
   <script src="script.js"></script>
   <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
-
-
 </body>
 
 </html>
