@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Home</title>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+  <link rel="icon" href="FFTLogo.png">
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 350px;
+      left: 75px;
+      right: 75px;
+
+
+      bottom: -105px;
+      margin: 0 0px 0 0;
+      width: 90%;
+      border: 2px solid black;
+      display: block;
+    }
+
+    table {
+      position: absolute;
+      bottom: -255px;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+
+    }
+
+    p {
+      font-size: 25px;
+      text-align: center;
+      font-family: Palatino;
+      color: #387a5b;
+    }
+
+    .submission {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+  <!--nav bar-->
+  <nav class='navbar'>
+    Food For Thought <img src="FFTLogo.png" style="float:left;width:75px;height:75px;">
+    <ul class=nav-links>
+      <li><a href='index.html'>Home</a></li>
+      <li><a href='about.html'>About</a></li>
+      <li><a href='mealplan.html'>Meal Plan</a></li>
+      <li><a href='advice.html'>Advice</a></li>
+    </ul>
+  </nav>
+
+  <!--title-->
+  <div class='title'>Find your Local Hospital</div>
+
+  <p>Enter coordinates in *latitude, longitude*</p>
+  <div class='submission'>
+    <input type="text" id="food_input" name="Name"> <br> <br>
+    <button id="submit_button" class="button-60">Submit</button>
+  </div>
+
+  <div id='map'></div>
+
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+  
+  <div id="map"></div>
+
+
+  <div id='table'>
+    <table>
+      <tr>
+        <th><strong>Number</strong></th>
+        <th><strong>Latitude</strong></th>
+        <th><strong>Longitude</strong></th>
+        <th><strong>City</strong></th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>39</td>
+        <td>-77</td>
+        <td><a href="https://childrensnational.org/">Washington D.C.</a></td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>41</td>
+        <td>-74</td>        
+        <td><a href="https://www.nyp.org/morganstanley?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4MTIwMzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D">New York City</a></td>
+      </tr>
+
+       <tr>
+        <td>3</td>
+        <td>34</td>
+        <td>-118</td>        
+        <td><a href="https://www.chla.org/">Los Angeles</a></td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>42</td>
+        <td>-89</td>        
+        <td><a href="https://www.luriechildrens.org/">Chicago</a></td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>33</td>
+        <td>-97</td>        
+        <td><a href="https://www.childrens.com/locations/dallas-campus/childrens-medical-center-dallas">Dallas</a></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <script type="module" src="/src/index.tsx"></script>
+  <script src="script.js"></script>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+
+
+</body>
+
+</html>
